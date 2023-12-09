@@ -90,6 +90,7 @@ moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi"}
 
 retrofit = {module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit"}
+retrofit-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit"}
 okhttp = {module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp"}
 okhttp-logging-interceptor = {module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp"}
 
@@ -103,5 +104,5 @@ dagger-hilt-android = { id = "com.google.dagger.hilt.android" , version.ref = "h
 
 [bundles]
 dagger-hilt = ["dagger-hilt-android","dagger-hilt-android-gradlePlugin","dagger-hilt-core"]
-retrofit = ["retrofit","okhttp", "okhttp-logging-interceptor"]
+retrofit = ["retrofit", "retrofit-moshi","okhttp", "okhttp-logging-interceptor"]
 

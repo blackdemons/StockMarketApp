@@ -102,4 +102,7 @@ dependencies {
 
     // Retrofit
     implementation(libs.bundles.retrofit)
+
+    // OpenCSV
+    implementation(libs.opencsv)
 }

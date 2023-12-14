@@ -18,12 +18,12 @@ class CompanyListingParser @Inject constructor(): CSVParser<CompanyListing> {
                 .readAll()
                 .drop(1)
                 .mapNotNull { line ->
-                    val symbols = line.getOrNull(0)
+                    val symbol = line.getOrNull(0)
                     val name = line.getOrNull(1)
                     val exchange = line.getOrNull(2)
                     CompanyListing(
                         name = name ?: return@mapNotNull null,
-                        symbols = symbols ?: return@mapNotNull null,
+                        symbol = symbol ?: return@mapNotNull null,
                         exchange = exchange ?: return@mapNotNull null
                     )
                 }

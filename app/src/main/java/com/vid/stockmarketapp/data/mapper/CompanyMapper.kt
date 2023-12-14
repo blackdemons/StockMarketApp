@@ -8,14 +8,14 @@ import com.vid.stockmarketapp.domain.model.CompanyListing
 fun CompanyListingEntity.toCompanyListing(): CompanyListing {
     return CompanyListing(
         name = name,
-        symbols = symbols,
+        symbol = symbol,
         exchange = exchange
     )
 }
 fun CompanyListing.toCompanyListingEntity(): CompanyListingEntity {
     return CompanyListingEntity(
         name = name,
-        symbols = symbols,
+        symbol = symbol,
         exchange = exchange
     )
 }

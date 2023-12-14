@@ -26,6 +26,7 @@ class StockRepositoryImpl @Inject constructor(
     private val intradayInfoParser: CSVParser<IntradayInfo>,
 ) : StockRepository {
     private val dao = db.dao
+    private val API_KEY = StockApi.API_KEY
     override suspend fun getCompanyListings(
         fetchFromRemote: Boolean,
         query: String,
@@ -43,8 +44,9 @@ class StockRepositoryImpl @Inject constructor(
                 emit(Resource.Loading(false))
                 return@flow
             }
+
             val remoteListing = try {
-                val response = api.getListings(query)
+                val response = api.getListings()
                 companyListingParser.parse(response.byteStream())
             } catch (e: IOException) {
                 e.printStackTrace()

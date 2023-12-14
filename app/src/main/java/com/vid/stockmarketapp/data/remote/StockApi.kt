@@ -21,7 +21,7 @@ interface StockApi {
     @GET("query?function=OVERVIEW")
     suspend fun getCompanyInfo(
         @Query("symbol") symbol: String,
-        @Query("api") apiKey: String = API_KEY
+        @Query("apikey") apiKey: String = API_KEY
     ): CompanyInfoDto
     companion object{
         const val API_KEY = "ODYX5MVGER3LLEAB"

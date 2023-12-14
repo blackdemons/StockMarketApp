@@ -19,12 +19,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import com.vid.stockmarketapp.presentation.screen.destinations.CompanyInfoScreenDestination
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
+@Destination(start = true)
 fun CompanyListingsScreen(
-    navController: NavController,
+    navigator: DestinationsNavigator,
     viewModel: CompanyListingsViewModel = hiltViewModel(),
 ) {
 
@@ -60,7 +63,9 @@ fun CompanyListingsScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                // TODO: Navigate to detail screen
+                                navigator.navigate(
+                                    CompanyInfoScreenDestination(company.symbol)
+                                )
                             }
                             .padding(16.dp)
                     )

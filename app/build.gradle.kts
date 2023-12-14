@@ -81,9 +81,10 @@ dependencies {
 
     // Compose dependencies
     implementation(libs.androidx.lifecycle)
-    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt)
     implementation(libs.androidx.compose.material)
+    implementation(libs.navigation.compose.core)
+    ksp(libs.navigation.compose.ksp)
 
     // Jetpack Navigation
     implementation(libs.androidx.compose.runtime)

@@ -28,9 +28,9 @@ fun CompanyListingsScreen(
     viewModel: CompanyListingsViewModel = hiltViewModel(),
 ) {
 
-
+    var refreshing = viewModel.state.isRefreshing
     val swipeRefreshState = rememberPullRefreshState(
-        refreshing = viewModel.state.isRefreshing,
+        refreshing = refreshing,
         onRefresh = { viewModel.onEvent(CompanyListingsEvent.Refresh) }
     )
     val state = viewModel.state
@@ -73,7 +73,7 @@ fun CompanyListingsScreen(
                 }
             }
 
-            PullRefreshIndicator(viewModel.state.isRefreshing, swipeRefreshState, Modifier.align(Alignment.TopCenter))
+            PullRefreshIndicator(refreshing, swipeRefreshState, Modifier.align(Alignment.TopCenter))
         }
     }
 }

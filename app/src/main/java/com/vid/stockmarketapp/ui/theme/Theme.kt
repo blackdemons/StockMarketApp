@@ -22,6 +22,12 @@ private val DarkColorScheme = darkColorScheme(
     onPrimary = Color.DarkGray,
     onBackground = TextWhite
 )
+private val LightColorScheme = lightColorScheme(
+    primary = Color.Green,
+    background = LightBlue,
+    onPrimary = Color.DarkGray,
+    onBackground = TextDark
+)
 
 
 
@@ -39,7 +45,7 @@ fun StockMarketAppTheme(
         }
 
         darkTheme -> DarkColorScheme
-        else -> DarkColorScheme
+        else -> LightColorScheme
     }
     val view = LocalView.current
     if (!view.isInEditMode) {
